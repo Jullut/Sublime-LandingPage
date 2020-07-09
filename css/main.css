@@ -26,6 +26,14 @@
   font-weight: bold;
   font-style: italic; }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; }
+
 .title-style {
   color: #000000;
   font-family: "Myriad Pro - Semibold";
@@ -41,7 +49,7 @@
 .text-style p:last-child {
   color: #595959;
   font-family: "Myriad Pro";
-  font-size: 0.875em;
+  font-size: 0.9em;
   font-weight: 400;
   padding-top: 0.5em; }
 
@@ -185,20 +193,25 @@ header {
     margin-top: 1em; }
 
 .projects {
-  margin-top: 7em; }
+  margin-top: 7em;
+  position: relative;
+  background: url("../img/header_bg.png") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; }
   .projects .projects__title {
-    color: #000000;
+    color: #ffffff;
     font-family: "Myriad Pro - Semibold";
     font-size: 1.875em;
     font-weight: 400;
-    margin-bottom: 0.5em; }
+    margin-bottom: 0.5em;
+    padding-top: 0.5em; }
     .projects .projects__title .capital1 {
       color: #ffc600;
       font-size: 2.5em; }
     .projects .projects__title .capital2 {
       font-size: 2.5em; }
   .projects .projects__nav a {
-    color: #101010;
+    color: #ffffff;
     font-family: "Myriad Pro - Semibold";
     font-size: 0.9em;
     font-weight: 400;
@@ -213,7 +226,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 1em; }
+    width: 90%; }
+  .projects .projects__gallery-center {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .projects .small-gallery {
     display: none; }
 
@@ -229,10 +246,11 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 64%; }
+    width: 97%; }
   .process .process__all-text {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    width: 30%; }
   .process .right {
     margin-left: 1em; }
   .process .left {
@@ -315,28 +333,6 @@ header {
   .team .img-ovr {
     width: 100%;
     height: auto; }
-  .team .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: .3s ease;
-    background-color: #ffa800; }
-  .team .team__img:hover .overlay {
-    opacity: 1; }
-  .team .icon {
-    color: white;
-    font-size: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center; }
 
 .test {
   min-height: 60vh;
@@ -426,7 +422,6 @@ header {
 .contact {
   display: flex;
   flex-direction: row;
-  margin-bottom: 7em;
   min-height: 100vh;
   height: 100vh;
   position: relative;
@@ -486,23 +481,17 @@ header {
 footer {
   display: flex;
   flex-direction: row;
-  min-height: 90vh;
-  height: 90vh;
   position: relative;
   background: url("../img/footer_bg.png") no-repeat center center;
-  background-size: cover;
-  height: 90%; }
+  background-size: cover; }
   footer .aaa {
     display: flex;
     flex-direction: row; }
   footer .footer__left {
-    min-height: 90vh;
-    height: 90vh;
     width: 40vh;
     position: relative;
     background: black;
     background-size: cover;
-    height: 90%;
     padding: 3em 0 0 3em; }
   footer .footer__right {
     display: flex;
@@ -511,7 +500,8 @@ footer {
     margin: 0 0 3em 3em; }
   footer .footer__title-nav {
     color: #ffffff;
-    padding-bottom: 1em; }
+    padding-bottom: 1em;
+    padding-top: 2.5em; }
   footer .footer__nav {
     display: flex;
     flex-direction: column; }
@@ -529,7 +519,8 @@ footer {
       color: #ffc600; }
   footer .footer__social {
     display: flex;
-    flex-direction: row; }
+    flex-direction: row;
+    padding-bottom: 40%; }
   footer .media {
     border: none;
     background-color: #e8e8e8;
@@ -587,15 +578,28 @@ footer {
   .about .about__container-title {
     width: 90%;
     text-align: center; }
-  .projects .big-gallery {
-    display: none; }
-  .projects .small-gallery {
-    display: unset;
-    width: 90%; }
-  .projects .projects__title {
-    width: 90%; }
-  .projects .projects__nav a:last-child {
-    display: none; }
+  .about .about__container {
+    justify-content: space-evenly; }
+  .projects {
+    position: relative;
+    background: url("../img/header-small_bg.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; }
+    .projects .big-gallery {
+      display: none; }
+    .projects .small-gallery {
+      display: unset;
+      width: 90%; }
+    .projects .projects__title {
+      width: 90%; }
+    .projects .projects__nav a:last-child {
+      display: none; }
+    .projects .projects__gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    .projects .projects__all-text {
+      margin-left: 1.5em; }
   .process .process__table {
     flex-direction: column; }
     .process .process__table .process__row:nth-child(2) .process__all-text {
@@ -606,16 +610,23 @@ footer {
       flex-direction: column;
       width: 90%;
       margin-bottom: 5%; }
+    .process .process__table .process__all-text {
+      width: 90%;
+      margin-bottom: 1.5em; }
   .services .services__title {
     margin-left: 1.5em; }
   .services .services__table {
     width: 90%;
-    justify-content: center;
-    align-items: center; }
+    justify-content: start; }
   .services .services__provided-text {
     width: 90%; }
   .services .services__provided {
-    margin: 3.5em; }
+    width: 90%;
+    margin: 1em; }
+  .services .row1,
+  .services .row2 {
+    flex-direction: column;
+    width: 90%; }
   .team .team__all-text {
     flex-direction: column; }
   .team .team__title {
@@ -636,7 +647,17 @@ footer {
       width: 90%; }
   .contact .contact__form-box {
     width: 80%; }
+  .contact #map {
+    display: none; }
   footer .footer__left {
     padding: 1.5em; }
   footer .footer__title-main {
     display: none; } }
+
+@media (max-width: 1024px) {
+  .process .process__table {
+    width: 100%; }
+  .process .process__row {
+    width: 100%; }
+  .process .process__all-text {
+    width: 41%; } }
