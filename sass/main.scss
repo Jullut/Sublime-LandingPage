@@ -42,6 +42,15 @@
 	font-style: italic;
 }
 
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+}
+
 .title-style {
 	color: #000000;
 	font-family: "Myriad Pro - Semibold";
@@ -62,7 +71,7 @@
 	& p:last-child {
 		color: #595959;
 		font-family: "Myriad Pro";
-		font-size: 0.875em;
+		font-size: 0.9em;
 		font-weight: 400;
 		padding-top: 0.5em;
 	}
@@ -258,13 +267,18 @@ header {
 
 .projects {
 	margin-top: 7em;
+	position: relative;
+	background: url("../img/header_bg.png") no-repeat center center;
+	background-size: cover;
+	background-attachment: fixed;
 
 	.projects__title {
-		color: #000000;
+		color: #ffffff;
 		font-family: "Myriad Pro - Semibold";
 		font-size: 1.875em;
 		font-weight: 400;
 		margin-bottom: 0.5em;
+		padding-top: 0.5em;
 
 		.capital1 {
 			color: #ffc600;
@@ -277,7 +291,7 @@ header {
 
 	.projects__nav {
 		& a {
-			color: #101010;
+			color: #ffffff;
 			font-family: "Myriad Pro - Semibold";
 			font-size: 0.9em;
 			font-weight: 400;
@@ -297,7 +311,14 @@ header {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-left: 1em;
+		//margin-left: 1em;
+		width: 90%;
+	}
+
+	.projects__gallery-center {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.small-gallery {
@@ -322,12 +343,13 @@ header {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 64%;
+		width: 97%;
 	}
 
 	.process__all-text {
 		display: flex;
 		flex-direction: column;
+		width: 30%;
 	}
 
 	.right {
@@ -452,34 +474,6 @@ header {
 	.img-ovr {
 		width: 100%;
 		height: auto;
-	}
-
-	.overlay {
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		height: 100%;
-		width: 100%;
-		opacity: 0;
-		transition: .3s ease;
-		background-color: #ffa800;
-	}
-
-	.team__img:hover .overlay {
-		opacity: 1;
-	}
-
-	.icon {
-		color: white;
-		font-size: 100px;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		-ms-transform: translate(-50%, -50%);
-		text-align: center;
 	}
 }
 
@@ -615,7 +609,6 @@ header {
 .contact {
 	display: flex;
 	flex-direction: row;
-	margin-bottom: 7em;
 	min-height: 100vh;
 	height: 100vh;
 	position: relative;
@@ -702,12 +695,12 @@ header {
 footer {
 	display: flex;
 	flex-direction: row;
-	min-height: 90vh;
-	height: 90vh;
+	//min-height: 100vh;
+	//height: 100vh;
 	position: relative;
 	background: url("../img/footer_bg.png") no-repeat center center;
 	background-size: cover;
-	height: 90%;
+	//height: 100%;
 
 	.aaa {
 		display: flex;
@@ -715,13 +708,10 @@ footer {
 	}
 
 	.footer__left {
-		min-height: 90vh;
-		height: 90vh;
 		width: 40vh;
 		position: relative;
 		background: black;
 		background-size: cover;
-		height: 90%;
 		padding: 3em 0 0 3em;
 	}
 
@@ -735,6 +725,7 @@ footer {
 	.footer__title-nav {
 		color: #ffffff;
 		padding-bottom: 1em;
+		padding-top: 2.5em;
 	}
 
 	.footer__nav {
@@ -763,6 +754,7 @@ footer {
 	.footer__social {
 		display: flex;
 		flex-direction: row;
+		padding-bottom: 40%;
 	}
 
 	.media {
@@ -854,9 +846,18 @@ footer {
 			width: 90%;
 			text-align: center;
 		}
+
+		.about__container {
+			justify-content: space-evenly;
+		}
 	}
 
 	.projects {
+		position: relative;
+		background: url("../img/header-small_bg.png") no-repeat center center;
+		background-size: cover;
+		background-attachment: fixed;
+
 		.big-gallery {
 			display: none;
 		}
@@ -874,6 +875,18 @@ footer {
 			a:last-child {
 				display: none;
 			}
+		}
+
+		.projects__gallery {
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.projects__all-text {
+			margin-left: 1.5em;
 		}
 	}
 
@@ -895,6 +908,11 @@ footer {
 				width: 90%;
 				margin-bottom: 5%;
 			}
+
+			.process__all-text {
+				width: 90%;
+				margin-bottom: 1.5em;
+			}
 		}
 	}
 
@@ -905,8 +923,7 @@ footer {
 
 		.services__table {
 			width: 90%;
-			justify-content: center;
-			align-items: center;
+			justify-content: start;
 		}
 
 		.services__provided-text {
@@ -914,7 +931,14 @@ footer {
 		}
 
 		.services__provided {
-			margin: 3.5em;
+			width: 90%;
+			margin: 1em;
+		}
+
+		.row1,
+		.row2 {
+			flex-direction: column;
+			width: 90%;
 		}
 	}
 
@@ -959,6 +983,10 @@ footer {
 		.contact__form-box {
 			width: 80%;
 		}
+
+		#map {
+			display: none;
+		}
 	}
 
 	footer {
@@ -968,6 +996,22 @@ footer {
 
 		.footer__title-main {
 			display: none;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.process {
+		.process__table {
+			width: 100%;
+		}
+
+		.process__row {
+			width: 100%;
+		}
+
+		.process__all-text {
+			width: 41%;
 		}
 	}
 }
